@@ -5,26 +5,20 @@ import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-public class Frame extends JFrame {
-
-    Frame(){
-        super("Kör terület");
+public class Frame1 extends JFrame {
+    Frame1(){
+        super("Kor_terulet");
         initComponent();
     }
 
     private void initComponent(){
 
-
-        this.setSize(300,150);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setLayout(null);
         this.setLocationRelativeTo(null);
+        this.setSize(300,150);
+        this.setLayout(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-
-
-        JLabel TextLbl = new JLabel("Sugár:");
+        JLabel TextLbl = new JLabel("Sugar:");
         TextLbl.setBounds(50,20,50,30);
         this.add(TextLbl);
 
@@ -37,14 +31,14 @@ public class Frame extends JFrame {
         resultLbl.setBounds(100,80,200,30);
         this.add(resultLbl);
         
-        JButton calcBtn = new JButton("Számít");
+        JButton calcBtn = new JButton("Szamit");
         calcBtn.setBounds(100,50,150,30);    
         this.add(calcBtn);
         calcBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 int userInput = Integer.parseInt(radiusTf.getText());
-                FormControl calculator = new FormControl();
+                Control calculator = new Control();
                 double ered = calculator.calc(userInput);
                 resultLbl.setText(String.valueOf(ered));
                 radiusTf.setText("");
